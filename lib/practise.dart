@@ -4,24 +4,35 @@ void main(){
 
 
   print('Welcome to Dart!');
-  String name="RAMAN";
+
+var myC=myClass();
+
+  print(myC.Add(4, 5));
+
+  print(myC.Add(20,56));
+
+myC.printName("vscode");// function calling
+  //
+  //
+  myC.printName("Arjun");
+  //
+  //
+  myC.printName("Kavya");
+  
+}
 
 
-  // var
+class myClass{
 
-  var section;
+  void printName(String name){//Declaration
+    print(name);//Definition
 
-  section=7;    //int
+  }
 
-  section="D";  //String
+  int Add(int no1, int no2){
+    int sum = no1+no2;
 
-  section=false;  //bool
-
-
-  dynamic subject="Maths";
-  subject="English";
-
-
-
+    return sum;
+  }
 }
 
