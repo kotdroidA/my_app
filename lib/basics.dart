@@ -8,5 +8,12 @@ main(){
   }
   else{
     print('block 2');
+
+  }
+
+  for(int i=0;i<10;i++){
+
+    print('hello world');
+
   }
 }
