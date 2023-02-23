@@ -56,14 +56,12 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text('Flutter Cantainer'),
       ),
-      body: Center(
-        child: Container(
-          width: 100,
-          height: 100,
-          color: Colors.orange,
-          child: Text("Hello Big bro :)"),
-        ),
-      ),
+      body: Text('Hello Flutter Devs',style: TextStyle(
+        fontSize: 25,
+        color: Colors.lightBlue,
+        fontWeight: FontWeight.w600,
+        backgroundColor: Colors.deepOrange
+      ),),
     );
   }
 }
