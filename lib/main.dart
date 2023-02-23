@@ -54,16 +54,17 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: Text(' Hello '),
+        title: Text(' Button '),
       ),
-      body: Center(
-        child: Container(
-          width: 200,
-          height: 100,
-          color: Colors.deepOrange,
-          child: Center(child: Text("This is a center of container!!", style: TextStyle(color: Colors.white),)),
-        ),
-      )
+      body:TextButton(
+         child: Text('Click Here!!'),
+        onPressed: (){
+           print("Text Button Tapped!!");
+        },
+        onLongPress: (){
+           print("Long Pressed!");
+        },
+      ),
       );
 
   }
