@@ -54,15 +54,13 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: Text(' Button '),
+        title: Text(' Images '),
       ),
-      body:OutlinedButton(
-            child: Text("Outlined Button!!"),
-        onPressed: (){
-              print("Outlined Clicked!");
-        },
-      )
-
+      body:Center(
+          child: Container(
+              width: 100,
+              height:100 ,
+              child: Image.asset('assets/images/ic_tree`.jpg')))
       );
 
   }
