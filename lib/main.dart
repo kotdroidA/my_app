@@ -54,14 +54,32 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: Text(' Images '),
+        title: Text(' Flutter'),
       ),
-      body:Center(
-          child: Container(
-              width: 100,
-              height:100 ,
-              child: Image.asset('assets/images/ic_tree`.jpg')))
-      );
+      body:Container(
+        height: 300,
+        width: 300,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            Row(
+              children: [Text('Sweetu Bro:)'),
+                Text('Big Bro!!'),
+                Text('Rude Bro:('),
+              ],
+            ),
+            Text('Sweetu Bro:)'),
+            Text('Big Bro!!'),
+            Text('Rude Bro:('),
+            ElevatedButton(onPressed:(){
+
+            },
+                child: Text('Click'))
+          ],
+        ),
+      )
+    );
 
   }
 }
