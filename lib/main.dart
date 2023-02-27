@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -56,27 +57,79 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(' Flutter'),
       ),
-      body:Container(
-        height: 300,
-        width: 300,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            Row(
-              children: [Text('Sweetu Bro:)'),
-                Text('Big Bro!!'),
-                Text('Rude Bro:('),
-              ],
-            ),
-            Text('Sweetu Bro:)'),
-            Text('Big Bro!!'),
-            Text('Rude Bro:('),
-            ElevatedButton(onPressed:(){
+      body:Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(bottom: 11),
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(right: 11),
+                        height: 200,
+                        width: 200,
+                        color: Colors.lightGreen,
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(right: 11),
+                        height: 200,
+                        width: 200,
+                        color: Colors.deepPurple,
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(right: 11),
+                        height: 200,
+                        width: 200,
+                        color: Colors.orange,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(bottom: 11),
+                height: 200,
+                color: Colors.amber,
+              ),
+              Container(
+                margin: EdgeInsets.only(bottom: 11),
+                height: 200,
+                color: Colors.deepPurple,
+              ),
+              Container(
+                margin: EdgeInsets.only(bottom: 11),
+                height: 200,
+                color: Colors.deepOrange,
+              ),
+              Container(
+                margin: EdgeInsets.only(bottom: 11),
+                height: 200,
+                color: Colors.lightGreen,
+              ),
+              Container(
+                margin: EdgeInsets.only(bottom: 11),
+                height: 200,
+                color: Colors.amber,
+              ),
+              Container(
+                margin: EdgeInsets.only(bottom: 11),
+                height: 200,
+                color: Colors.deepPurple,
+              ),
+              Container(
+                margin: EdgeInsets.only(bottom: 11),
+                height: 200,
+                color: Colors.deepOrange,
+              ),
 
-            },
-                child: Text('Click'))
-          ],
+
+
+            ],
+          ),
         ),
       )
     );
