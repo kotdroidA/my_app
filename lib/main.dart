@@ -45,6 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    var arrName =["Anchal","Sonali","Arpita","Ritika","Richa","Ruchi"];
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
     //
@@ -55,82 +56,33 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: Text(' Flutter'),
+        title: Text(' ListView'),
       ),
-      body:Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(bottom: 11),
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: [
-                      Container(
-                        margin: EdgeInsets.only(right: 11),
-                        height: 200,
-                        width: 200,
-                        color: Colors.lightGreen,
-                      ),
-                      Container(
-                        margin: EdgeInsets.only(right: 11),
-                        height: 200,
-                        width: 200,
-                        color: Colors.deepPurple,
-                      ),
-                      Container(
-                        margin: EdgeInsets.only(right: 11),
-                        height: 200,
-                        width: 200,
-                        color: Colors.orange,
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.only(bottom: 11),
-                height: 200,
-                color: Colors.amber,
-              ),
-              Container(
-                margin: EdgeInsets.only(bottom: 11),
-                height: 200,
-                color: Colors.deepPurple,
-              ),
-              Container(
-                margin: EdgeInsets.only(bottom: 11),
-                height: 200,
-                color: Colors.deepOrange,
-              ),
-              Container(
-                margin: EdgeInsets.only(bottom: 11),
-                height: 200,
-                color: Colors.lightGreen,
-              ),
-              Container(
-                margin: EdgeInsets.only(bottom: 11),
-                height: 200,
-                color: Colors.amber,
-              ),
-              Container(
-                margin: EdgeInsets.only(bottom: 11),
-                height: 200,
-                color: Colors.deepPurple,
-              ),
-              Container(
-                margin: EdgeInsets.only(bottom: 11),
-                height: 200,
-                color: Colors.deepOrange,
-              ),
+      body:ListView.separated(itemBuilder: (context,index){
+        return Row(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(arrName[index],style: TextStyle(fontSize: 21,fontWeight: FontWeight.w500),),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(arrName[index],style: TextStyle(fontSize: 11,fontWeight: FontWeight.w500),),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(arrName[index],style: TextStyle(fontSize: 8,fontWeight: FontWeight.w500),),
+            ),
 
+          ],
+        );
 
+      },
+        itemCount: arrName.length,
 
-            ],
-          ),
-        ),
+        separatorBuilder: (context,index){
+        return Divider(height: 100,thickness: 2,);
+        },
       )
     );
 
