@@ -56,33 +56,34 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: Text(' ListView'),
+        title: Text(' Dashboard'),
       ),
-      body:ListView.separated(itemBuilder: (context,index){
-        return Row(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(arrName[index],style: TextStyle(fontSize: 21,fontWeight: FontWeight.w500),),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(arrName[index],style: TextStyle(fontSize: 11,fontWeight: FontWeight.w500),),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(arrName[index],style: TextStyle(fontSize: 8,fontWeight: FontWeight.w500),),
-            ),
+      body:Container(
+        width: double.infinity,
+        height: double.infinity,
+        child: Center(
+          child: Container(
+            width: 200,
+            height: 200,
+            decoration: BoxDecoration(
+              color: Colors.blueGrey,
+              borderRadius: BorderRadius.circular(21),
+              border: Border.all(
+                width: 2,
+                color: Colors.black
+              ),
+              boxShadow: [
+                BoxShadow(
+                  blurRadius: 21,
+                  color: Colors.grey,
+                  spreadRadius: 11
+                )
+              ],
 
-          ],
-        );
 
-      },
-        itemCount: arrName.length,
-
-        separatorBuilder: (context,index){
-        return Divider(height: 100,thickness: 2,);
-        },
+            ),
+          ),
+        ),
       )
     );
 
