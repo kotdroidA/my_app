@@ -58,32 +58,39 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(' Dashboard'),
       ),
-      body:Container(
-        width: double.infinity,
-        height: double.infinity,
-        child: Center(
-          child: Container(
-            width: 200,
-            height: 200,
-            decoration: BoxDecoration(
-              color: Colors.blueGrey,
-              borderRadius: BorderRadius.circular(21),
-              border: Border.all(
-                width: 2,
-                color: Colors.black
-              ),
-              boxShadow: [
-                BoxShadow(
-                  blurRadius: 21,
-                  color: Colors.grey,
-                  spreadRadius: 11
-                )
-              ],
-
-
+      body: Row(
+        children: [
+          Container(
+            width: 50,
+            height: 100,
+            color: Colors.blue,
+          ),
+          Expanded(
+            flex: 2,
+            child: Container(
+              width: 50,
+              height: 100,
+              color: Colors.orange,
             ),
           ),
-        ),
+          Expanded(
+            flex: 4,
+            child:
+          Container(
+            width: 50,
+            height: 100,
+            color: Colors.grey,
+          ),
+          ),
+          Expanded(
+            flex: 3,
+            child: Container(
+             width: 50,
+              height: 100,
+              color: Colors.green,
+            ),
+          )
+        ],
       )
     );
 
