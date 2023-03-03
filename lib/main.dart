@@ -60,7 +60,11 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body:ListView.separated(itemBuilder: (context, index) {
         return ListTile(
-        leading:Text('${index+1}') ,
+        leading:CircleAvatar(
+          child: Text('Oops!',style: TextStyle(fontSize: 10),),
+          backgroundImage: AssetImage('assets/images/ic_tree.jpg'),
+
+        ) ,
         title: Text(arrName[index]),
         subtitle:Text('Number') ,
           trailing:Icon(Icons.add) ,
@@ -71,6 +75,7 @@ class _MyHomePageState extends State<MyHomePage> {
         return Divider(height: 40,thickness: 1,);
       },
       )
+
     );
 
   }
