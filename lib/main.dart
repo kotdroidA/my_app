@@ -45,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-
+  var arrName = ['Raman','Ramnaujan','jemes','john','Ronit','Vinayak','virat',];
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
     //
@@ -56,16 +56,20 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: Text(' Dashboard'),
+        title: Text(' ListView'),
       ),
-      body: Container(
-        color: Colors.orange,
-          margin: EdgeInsets.all(11),
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text('HELLO WORLD!!',style: TextStyle(fontSize: 25),
-            ),
-          )
+      body:ListView.separated(itemBuilder: (context, index) {
+        return ListTile(
+        leading:Text('${index+1}') ,
+        title: Text(arrName[index]),
+        subtitle:Text('Number') ,
+          trailing:Icon(Icons.add) ,
+        );
+      },
+      itemCount:arrName.length ,
+      separatorBuilder:(context,index){
+        return Divider(height: 40,thickness: 1,);
+      },
       )
     );
 
