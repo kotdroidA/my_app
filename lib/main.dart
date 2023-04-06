@@ -56,7 +56,13 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: Text(' ListView',style: TextStyle(fontFamily: 'FontMain'),),
+        title: Card(
+          shadowColor: Colors.orange,
+          elevation: 20,
+            child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(' ListView',style:TextStyle(fontSize: 25),),
+        )),
       ),
       body:ListView.separated(itemBuilder: (context, index) {
         return ListTile(
@@ -77,6 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
       )
 
     );
+
 
   }
 }
