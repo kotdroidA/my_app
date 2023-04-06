@@ -56,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: Text(' ListView'),
+        title: Text(' ListView',style: TextStyle(fontFamily: 'FontMain'),),
       ),
       body:ListView.separated(itemBuilder: (context, index) {
         return ListTile(
