@@ -46,24 +46,31 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
   var arrName = ['Raman','Ramnaujan','jemes','john','Ronit','Vinayak','virat',];
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
+  var time=DateTime.now();
     return Scaffold(
       appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(' Style and Themes',style:TextStyle(fontSize: 25),),
+
+        title: Text('Current Date and time',style:TextStyle(fontSize: 20),),
       ),
       body:Column(
         children: [
-          Text('Text1',style:Theme.of(context).textTheme.headline1!.copyWith(color:Colors.orange)),
-          Text('Text2',style:Theme.of(context).textTheme.subtitle1),
-          Text('Text3',style:Theme.of(context).textTheme.headline1!.copyWith(color: Colors.amberAccent)),
-          Text('Text4',style: mTextStyle11(textColor: Colors.blue) ,),
+          Center(
+            child: Container(
+              width: 200,
+              height: 200,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text('Current Time :${time.hour}:${time.minute}:${time.second},',style:Theme.of(context).textTheme.headline1!.copyWith(color:Colors.lightBlue)),
+                  ElevatedButton(onPressed:(){
+                    setState(() {
+
+});
+                  } , child: Text('Current Time'))
+                ],
+              ),
+            ),
+          ),
 
         ],
       )
