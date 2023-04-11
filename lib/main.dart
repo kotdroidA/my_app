@@ -41,7 +41,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
+var emailText=TextEditingController();
+var passText=TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -50,29 +51,69 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
 
-        title: Text('Current Date and time',style:TextStyle(fontSize: 20),),
+        title: Text('Text Field',style:TextStyle(fontSize: 20),)
       ),
-      body:Column(
-        children: [
-          Center(
-            child: Container(
-              width: 200,
-              height: 200,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text('Current Time :${time.hour}:${time.minute}:${time.second},',style:Theme.of(context).textTheme.headline1!.copyWith(color:Colors.lightBlue)),
-                  ElevatedButton(onPressed:(){
-                    setState(() {
+      body:Center(child: Container(
+        width: 300,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              TextField(
+                controller: emailText,
+                decoration: InputDecoration(
+                  hintText: 'Enter Email',
+                  focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(16),
+                      borderSide: BorderSide(
+                      color: Colors.deepOrange,
+                      width: 2,
+                    )
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(16),
+                      borderSide: BorderSide(
+                        color: Colors.blueAccent,
+                        width: 2,
+                  ),
+                ),
+                  disabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(16),
+                        borderSide: BorderSide(
+                         color: Colors.black26,
+                         width: 2,
+                      )
+                  ),
+                  suffixIcon: IconButton(
+                    icon: Icon(Icons.remove_red_eye,color: Colors.orange,),
+                    onPressed: (){
 
-});
-                  } , child: Text('Current Time'))
-                ],
+                    },
+                  ),
+                  prefix: Icon(Icons.email,color: Colors.orange),
               ),
-            ),
-          ),
-
-        ],
+              ),
+               Container(height: 11,),
+              TextField(
+                keyboardType: TextInputType.number,
+                controller: passText,
+                obscureText: true,
+                obscuringCharacter: '*',
+                decoration: InputDecoration(
+                  hintText: 'Enter Password',
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(16)
+                    ),
+              )
+              ),
+              ElevatedButton(onPressed: (){
+              String uEmail=emailText.text.toString();
+              String uPass=passText.text;
+              print("Email: $uEmail,Pass:$uPass");
+              },
+                  child: Text('Login'))
+            ],
+          )
+      )
       )
 
     );
