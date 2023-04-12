@@ -52,26 +52,44 @@ var passText=TextEditingController();
     return Scaffold(
       appBar: AppBar(
 
-        title: Text('Current date  and Time',style:TextStyle(fontSize: 20),)
+        title: Text('Date Picker',style:TextStyle(fontSize: 20),)
       ),
       body:Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text('Select Date',style: TextStyle(fontSize: 18)
+            ),
+            ElevatedButton(onPressed: () async {
+              DateTime? datePicked= await showDatePicker(
+                  context: context,
+                  initialDate: DateTime.now(),
+                  firstDate: DateTime(2021),
+                  lastDate: DateTime(2025),
+              );
 
-          child: Container(
-            width: 200,
-            height: 200,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text('Current Time:${DateFormat('jms').format(time)}',style: TextStyle(fontSize: 18),),
-                  ElevatedButton(onPressed: (){
-                    setState(() {
 
-                    });
+                if(datePicked!=null){
+                  print('Date Selected: ${datePicked.day}-${datePicked.month}-${datePicked.year}');
+               }
 
-                  }, child: Text('Current Time'))
-                ],
-              )
-          )
+            }, child: Text('Show')
+            ),
+            ElevatedButton(
+              onPressed: () async {
+                TimeOfDay? pickedTime= await showTimePicker(
+                    context: context,
+                    initialTime: TimeOfDay.now(),
+                    initialEntryMode: TimePickerEntryMode.input
+                );
+                if(pickedTime!=null){
+                  print('Time Selected:${pickedTime.hour}:${pickedTime.minute}');
+                }
+              },
+              child: Text('Select Time'),
+            )
+          ],
+        ),
       )
     );
 
