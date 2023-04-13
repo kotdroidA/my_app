@@ -48,49 +48,58 @@ var passText=TextEditingController();
   @override
   Widget build(BuildContext context) {
   var arrName = ['Raman','Ramnaujan','jemes','john','Ronit','Vinayak','virat',];
-  var time=DateTime.now();
+  var arrColors = [Colors.red,Colors.orange,Colors.grey,Colors.blue,Colors.pink,Colors.green,Colors.purpleAccent,Colors.brown];
+
     return Scaffold(
       appBar: AppBar(
 
-        title: Text('Date Picker',style:TextStyle(fontSize: 20),)
+        title: Text('GridView',style:TextStyle(fontSize: 20),)
       ),
-      body:Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text('Select Date',style: TextStyle(fontSize: 18)
+      body:Column(
+        children: [
+          Container(
+            height: 200,
+            child: GridView.count(
+              crossAxisCount: 4,
+              crossAxisSpacing: 11,
+              mainAxisSpacing: 11,
+              children: [
+                Container(color: arrColors[0],),
+                Container(color: arrColors[1],),
+                Container(color: arrColors[2],),
+                Container(color: arrColors[3],),
+                Container(color: arrColors[4],),
+                Container(color: arrColors[5],),
+                Container(color: arrColors[6],),
+                Container(color: arrColors[7],)
+              ],
             ),
-            ElevatedButton(onPressed: () async {
-              DateTime? datePicked= await showDatePicker(
-                  context: context,
-                  initialDate: DateTime.now(),
-                  firstDate: DateTime(2021),
-                  lastDate: DateTime(2025),
-              );
-
-
-                if(datePicked!=null){
-                  print('Date Selected: ${datePicked.day}-${datePicked.month}-${datePicked.year}');
-               }
-
-            }, child: Text('Show')
+          ),
+          Container(
+            height: 100,
+          ),
+          Container(
+            height: 200 ,
+            child: GridView.extent(
+              maxCrossAxisExtent: 50,
+              crossAxisSpacing: 11,
+              mainAxisSpacing: 11,
+              children: [
+                Container(color: arrColors[0],),
+                Container(color: arrColors[1],),
+                Container(color: arrColors[2],),
+                Container(color: arrColors[3],),
+                Container(color: arrColors[4],),
+                Container(color: arrColors[5],),
+                Container(color: arrColors[6],),
+                Container(color: arrColors[7],)
+              ],
             ),
-            ElevatedButton(
-              onPressed: () async {
-                TimeOfDay? pickedTime= await showTimePicker(
-                    context: context,
-                    initialTime: TimeOfDay.now(),
-                    initialEntryMode: TimePickerEntryMode.input
-                );
-                if(pickedTime!=null){
-                  print('Time Selected:${pickedTime.hour}:${pickedTime.minute}');
-                }
-              },
-              child: Text('Select Time'),
-            )
-          ],
-        ),
+          ),
+
+        ],
       )
+
     );
 
 
