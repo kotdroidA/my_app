@@ -42,8 +42,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-var emailText=TextEditingController();
-var passText=TextEditingController();
+
 
   @override
   Widget build(BuildContext context) {
@@ -53,18 +52,41 @@ var passText=TextEditingController();
     return Scaffold(
       appBar: AppBar(
 
-        title: Text('GridView',style:TextStyle(fontSize: 20),)
+        title: Text('Stack Widget',style:TextStyle(fontSize: 20),)
       ),
-      body:GridView.builder(itemBuilder:(context, index) {
-        return Container(color: arrColors[index]);
-      },itemCount: arrColors.length,gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 3,
-        crossAxisSpacing: 11,
-        mainAxisSpacing: 11,
+      body:Container(
+        width: 300,
+        height: 300,
+        child: Stack(
+          children: [
+            Container(
+              width: 200,
+              height: 200,
+              color: Colors.blueGrey,
+            ),
+            Positioned(
+              left: 21,
+              top: 21,
 
-      ),)
-
+              child: Container(
+                width: 200,
+                height: 200,
+                color: Colors.grey,
+              ),
+            )
+          ],
+        ),
+      )
     );
+
+
+
+
+
+
+
+
+
 
     //Column(
     //         children: [
