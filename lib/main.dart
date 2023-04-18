@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:my_app/Widgets/rounded_button.dart';
 import 'package:my_app/ui_helper/util.dart';
 import 'package:intl/intl.dart';
 
@@ -51,88 +52,47 @@ class _MyHomePageState extends State<MyHomePage> {
 
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.orange,
 
-        title: Text('Stack Widget',style:TextStyle(fontSize: 20),)
+        title: Text('Custom Widget',style:TextStyle(fontSize: 20),)
       ),
-      body:Container(
-        width: 300,
-        height: 300,
-        child: Stack(
+      body:Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              width: 200,
-              height: 200,
-              color: Colors.blueGrey,
-            ),
-            Positioned(
-              left: 21,
-              top: 21,
+              width: 100,
+              height: 50,
+              child: RoundedButton(buttonName: 'Play',
+                icon: Icon(Icons.play_arrow),
+                callback: (){
+                print('Playing !!');
 
-              child: Container(
-                width: 200,
-                height: 200,
-                color: Colors.grey,
+              },
+                textStyle: mTextStyle16(),
+
               ),
-            )
+            ),
+            Container(height: 11,),
+            Container(
+              width: 100,
+              height: 50,
+              child: RoundedButton(buttonName: 'Press',
+
+                callback: (){
+                  print(' Press !!');
+
+                },
+                bgColor: Colors.orange,
+                textStyle: mTextStyle21(),
+
+              ),
+            ),
+
           ],
         ),
       )
     );
-
-
-
-
-
-
-
-
-
-
-    //Column(
-    //         children: [
-    //           Container(
-    //             height: 200,
-    //             child: GridView.count(
-    //               crossAxisCount: 4,
-    //               crossAxisSpacing: 11,
-    //               mainAxisSpacing: 11,
-    //               children: [
-    //                 Container(color: arrColors[0],),
-    //                 Container(color: arrColors[1],),
-    //                 Container(color: arrColors[2],),
-    //                 Container(color: arrColors[3],),
-    //                 Container(color: arrColors[4],),
-    //                 Container(color: arrColors[5],),
-    //                 Container(color: arrColors[6],),
-    //                 Container(color: arrColors[7],)
-    //               ],
-    //             ),
-    //           ),
-    //           Container(
-    //             height: 100,
-    //           ),
-    //           Container(
-    //             height: 200 ,
-    //             child: GridView.extent(
-    //               maxCrossAxisExtent: 50,
-    //               crossAxisSpacing: 11,
-    //               mainAxisSpacing: 11,
-    //               children: [
-    //                 Container(color: arrColors[0],),
-    //                 Container(color: arrColors[1],),
-    //                 Container(color: arrColors[2],),
-    //                 Container(color: arrColors[3],),
-    //                 Container(color: arrColors[4],),
-    //                 Container(color: arrColors[5],),
-    //                 Container(color: arrColors[6],),
-    //                 Container(color: arrColors[7],)
-    //               ],
-    //             ),
-    //           ),
-    //
-    //         ],
-    //       )
-
 
   }
 }
