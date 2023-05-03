@@ -54,40 +54,59 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         backgroundColor: Colors.orange,
 
-        title: Text('Custom Widget',style:TextStyle(fontSize: 20),)
+        title: Text('Concept of Wrap Widget',style:TextStyle(fontSize: 20),)
       ),
-      body:Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+      body:Container(
+        width: double.infinity,
+        child: Wrap(
+          direction: Axis.vertical,
+          alignment: WrapAlignment.spaceBetween,
+          spacing: 9,
+          runSpacing: 9,
           children: [
             Container(
               width: 100,
-              height: 50,
-              child: RoundedButton(buttonName: 'Play',
-                icon: Icon(Icons.play_arrow),
-                callback: (){
-                print('Playing !!');
-
-              },
-                textStyle: mTextStyle16(),
-
-              ),
+              height: 100,
+              color: Colors.orange,
             ),
-            Container(height: 11,),
             Container(
               width: 100,
-              height: 50,
-              child: RoundedButton(buttonName: 'Press',
-
-                callback: (){
-                  print(' Press !!');
-
-                },
-                bgColor: Colors.orange,
-                textStyle: mTextStyle21(),
-
-              ),
+              height: 100,
+              color: Colors.blue,
             ),
+            Container(
+              width: 100,
+              height: 100,
+              color: Colors.brown,
+            ),
+            Container(
+              width: 100,
+              height: 100,
+              color: Colors.redAccent,
+            ),
+            Container(
+              width: 100,
+              height: 100,
+              color: Colors.orange,
+            ),
+            Container(
+              width: 100,
+              height: 100,
+              color: Colors.blue,
+            ),
+            Container(
+              width: 100,
+              height: 100,
+              color: Colors.brown,
+            ),
+            Container(
+              width: 100,
+              height: 100,
+              color: Colors.redAccent,
+            ),
+
+
+
 
           ],
         ),
