@@ -54,61 +54,21 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         backgroundColor: Colors.orange,
 
-        title: Text('Concept of Wrap Widget',style:TextStyle(fontSize: 20),)
+        title: Text('Rich Text',style:TextStyle(fontSize: 20),)
       ),
-      body:Container(
-        width: double.infinity,
-        child: Wrap(
-          direction: Axis.vertical,
-          alignment: WrapAlignment.spaceBetween,
-          spacing: 9,
-          runSpacing: 9,
-          children: [
-            Container(
-              width: 100,
-              height: 100,
-              color: Colors.orange,
-            ),
-            Container(
-              width: 100,
-              height: 100,
-              color: Colors.blue,
-            ),
-            Container(
-              width: 100,
-              height: 100,
-              color: Colors.brown,
-            ),
-            Container(
-              width: 100,
-              height: 100,
-              color: Colors.redAccent,
-            ),
-            Container(
-              width: 100,
-              height: 100,
-              color: Colors.orange,
-            ),
-            Container(
-              width: 100,
-              height: 100,
-              color: Colors.blue,
-            ),
-            Container(
-              width: 100,
-              height: 100,
-              color: Colors.brown,
-            ),
-            Container(
-              width: 100,
-              height: 100,
-              color: Colors.redAccent,
-            ),
-
-
-
-
-          ],
+      body:Center(
+        child: RichText(
+          text: TextSpan(
+            style: TextStyle(color: Colors.grey,fontSize: 21),
+            children: <TextSpan>[
+              TextSpan(text: "Dadda's"),
+              TextSpan(text: "Fiance",style: TextStyle(fontSize: 25,color: Colors.purple,fontWeight: FontWeight.bold)),
+              TextSpan(text: 'Welcome to'),
+              TextSpan(text: 'Some one Specail',
+                  style: TextStyle(fontSize:25,fontWeight: FontWeight.bold,
+                      color: Colors.deepOrange,fontStyle: FontStyle.italic)),
+            ]
+          ),
         ),
       )
     );
