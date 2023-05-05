@@ -52,11 +52,45 @@ class _MyHomePageState extends State<MyHomePage> {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.orange,
+        backgroundColor: Colors.purpleAccent,
 
-        title: Text('Icon Widget',style:TextStyle(fontSize: 20),)
+        title: Text('Sized Box',style:TextStyle(fontSize: 20),)
       ),
-      body:Center(child: Icon(Icons.play_circle_outline,size: 100,color: Colors.blue,))
+      body:Wrap(
+        children:[
+        SizedBox.square(
+            dimension: 100,
+            child: ElevatedButton(
+              onPressed: (){},
+              child: Text('Click'),
+            ),
+          ),
+          SizedBox(
+            width: 10,
+          ),
+          SizedBox.square(
+            dimension: 100,
+            child: ElevatedButton(
+              onPressed: (){},
+              child: Text('Click'),
+            ),
+          ),
+          SizedBox.square(
+            dimension: 100,
+            child: ElevatedButton(
+              onPressed: (){},
+              child: Text('Click'),
+            ),
+          ),
+          SizedBox.square(
+            dimension: 100,
+            child: ElevatedButton(
+              onPressed: (){},
+              child: Text('Click'),
+            ),
+          ),
+          ]
+      ),
     );
 
   }
