@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:my_app/Widgets/rounded_button.dart';
 import 'package:my_app/ui_helper/util.dart';
 import 'package:intl/intl.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 
 void main() {
@@ -54,42 +55,21 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         backgroundColor: Colors.purpleAccent,
 
-        title: Text('Sized Box',style:TextStyle(fontSize: 20),)
+        title: Text('Font Awesome Icon',style:TextStyle(fontSize: 20),)
       ),
-      body:Wrap(
-        children:[
-        SizedBox.square(
-            dimension: 100,
-            child: ElevatedButton(
-              onPressed: (){},
-              child: Text('Click'),
+      body:Center(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              Icons.play_circle_outline,
+              size: 50,
+              color: Colors.blue,
             ),
-          ),
-          SizedBox(
-            width: 10,
-          ),
-          SizedBox.square(
-            dimension: 100,
-            child: ElevatedButton(
-              onPressed: (){},
-              child: Text('Click'),
-            ),
-          ),
-          SizedBox.square(
-            dimension: 100,
-            child: ElevatedButton(
-              onPressed: (){},
-              child: Text('Click'),
-            ),
-          ),
-          SizedBox.square(
-            dimension: 100,
-            child: ElevatedButton(
-              onPressed: (){},
-              child: Text('Click'),
-            ),
-          ),
-          ]
+            SizedBox(width: 11,),
+            FaIcon(FontAwesomeIcons.instagram,color: Colors.purple,size: 40,),
+          ],
+        ),
       ),
     );
 
