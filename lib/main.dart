@@ -41,27 +41,83 @@ class MyHomePage extends StatefulWidget{
 
  }
  class MyHomeState extends State<MyHomePage>{
-  var count =0;
+  var no1Controller = TextEditingController();
+  var no2Controller = TextEditingController();
+  var result = "";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sateful'),
+        title: Text('Basic Calculations'),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text('Count :$count',style: TextStyle(fontSize: 30),),
-            ElevatedButton(onPressed: (){
-              count++;
-              print(count);
+      body: Container(
+        color: Colors.purple.shade100,
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                TextField(
+                  keyboardType: TextInputType.number,
+                  controller:no1Controller ,
+                ),
+                TextField(
+                  keyboardType: TextInputType.number,
+                  controller: no2Controller,
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(21),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      ElevatedButton(onPressed: (){
+                        var no1 = int.parse(no1Controller.text.toString());
+                        var no2 = int.parse(no2Controller.text.toString());
+                        var sum = no1+no2;
+                        result = "The sum of $no1 and $no2 is $sum";
+                        setState(() {
 
-              setState(() {
+                        });
+                      }, child: Text('Add')),
 
-              });
-            }, child: Text('Increment Count'))
-          ],
+                      ElevatedButton(onPressed: (){
+                        var no1 = int.parse(no1Controller.text.toString());
+                        var no2 = int.parse(no2Controller.text.toString());
+                        var  diff = no1-no2;
+                        result = "The Difference between $no1 and $no2 is $diff";
+                        setState(() {
+
+                        });
+                      }, child: Text('Sub')),
+
+                      ElevatedButton(onPressed: (){
+                        var no1 = int.parse(no1Controller.text.toString());
+                        var no2 = int.parse(no2Controller.text.toString());
+                        var  product = no1*no2;
+                        result = "The Product of $no1 and $no2 is $product";
+                        setState(() {
+
+                        });
+                      }, child: Text('Mul')),
+
+                      ElevatedButton(onPressed: (){
+                        var no1 = int.parse(no1Controller.text.toString());
+                        var no2 = int.parse(no2Controller.text.toString());
+                        var  times = no1/no2;
+                        result = "The $no1 can be divided by $no2,   ${times.toStringAsFixed(2)}times.";
+                        setState(() {
+
+                        });
+                      }, child: Text('Div')),
+                    ],
+                  ),
+                ),
+                Padding(padding: EdgeInsets.all(21),child: Text(result,style: TextStyle(fontSize: 25,color: Colors.white),),)
+              ],
+            ),
+          ),
+
         ),
       ),
     );
