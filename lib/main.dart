@@ -28,50 +28,46 @@ class MyApp extends StatelessWidget {
         )
 
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-
-
-  final String title;
-
+class MyHomePage extends StatefulWidget{
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
+  State<StatefulWidget> createState() {
+    return MyHomeState();
+  }
 
-class _MyHomePageState extends State<MyHomePage> {
-
-
+ }
+ class MyHomeState extends State<MyHomePage>{
+  var count =0;
   @override
   Widget build(BuildContext context) {
-  var arrName = ['Raman','Ramnaujan','jemes','john','Ronit','Vinayak','virat',];
-  var arrColors = [Colors.red,Colors.orange,Colors.grey,Colors.blue,Colors.pink,Colors.green,Colors.purpleAccent,Colors.brown];
-
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.purpleAccent,
-
-        title: Text('Font Awesome Icon',style:TextStyle(fontSize: 20),)
+        title: Text('Sateful'),
       ),
-      body:Center(
-        child: Row(
+      body: Center(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(
-              Icons.play_circle_outline,
-              size: 50,
-              color: Colors.blue,
-            ),
-            SizedBox(width: 11,),
-            FaIcon(FontAwesomeIcons.instagram,color: Colors.purple,size: 40,),
+            Text('Count :$count',style: TextStyle(fontSize: 30),),
+            ElevatedButton(onPressed: (){
+              count++;
+              print(count);
+
+              setState(() {
+
+              });
+            }, child: Text('Increment Count'))
           ],
         ),
       ),
     );
-
   }
-}
+
+ }
+
+
+
