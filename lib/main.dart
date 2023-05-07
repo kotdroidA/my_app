@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:my_app/Splash_Screen.dart';
 import 'package:my_app/Widgets/rounded_button.dart';
 import 'package:my_app/ui_helper/util.dart';
 import 'package:intl/intl.dart';
@@ -30,37 +31,39 @@ class MyApp extends StatelessWidget {
         )
 
       ),
-      home: IntroPage(),
+      home: SplashScreen(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget{
-  @override
-  State<StatefulWidget> createState() {
-    return MyHomeState();
-  }
-
- }
- class MyHomeState extends State<MyHomePage>{
-  var no1Controller = TextEditingController();
-  var no2Controller = TextEditingController();
-  var result = "";
+class DashBoardScreen extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Classico'),
-      ),
-      body:Container(
-        color: Colors.blue.shade200,
-        child: Center(child: Text("Dadda's Fiance :) ",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20,color: Colors.white),)),
-      ),
 
+        appBar: AppBar(
+          title: Text('DashBoard'),
+        ),
+      body: Center(child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text('DashBoard Screen',style: TextStyle(fontSize: 21,color: Colors.deepOrange),),
+
+          SizedBox(height: 11,),
+
+          ElevatedButton(onPressed: (){
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => IntroPage()));
+          }, child: Text('My Profile')),
+        ],
+      )
+      ),
     );
-  }
+    }
 
- }
+}
+
 
 
 

@@ -21,7 +21,7 @@ class IntroPage extends StatelessWidget{
             ElevatedButton(
                 onPressed: (){
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => MyHomePage(),
+                  MaterialPageRoute(builder: (context) => DashBoardScreen(),
                   ));
 
             }, child: Text('Show Magic')),
@@ -32,3 +32,4 @@ class IntroPage extends StatelessWidget{
   }
 
 }
+
