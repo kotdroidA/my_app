@@ -5,6 +5,8 @@ import 'package:my_app/ui_helper/util.dart';
 import 'package:intl/intl.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import 'IntroPage.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -28,7 +30,7 @@ class MyApp extends StatelessWidget {
         )
 
       ),
-      home: MyHomePage(),
+      home: IntroPage(),
     );
   }
 }
@@ -48,21 +50,11 @@ class MyHomePage extends StatefulWidget{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Constraint box'),
+        title: Text('Classico'),
       ),
-      body:ConstrainedBox(
-        constraints: BoxConstraints(
-          maxWidth: 200,
-          maxHeight: 100,
-        ),
-          child: Text('Anchal Srivastava,'
-              'Sonali Srivastava,'
-              ' Ritika Srivastava,'
-              'Arpita Srivastava, '
-              'Richa Srivastava, '
-              'Ruchi Srivastava, '
-              'Nidhi Srivastava '
-            ,style: TextStyle(fontSize: 20,overflow: TextOverflow.fade ),)
+      body:Container(
+        color: Colors.blue.shade200,
+        child: Center(child: Text("Dadda's Fiance :) ",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20,color: Colors.white),)),
       ),
 
     );
