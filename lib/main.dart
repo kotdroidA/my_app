@@ -36,15 +36,24 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class DashBoardScreen extends StatelessWidget{
+class DashBoardScreen extends StatefulWidget{
+  @override
+  State<DashBoardScreen> createState() => _DashBoardScreenState();
+}
+
+class _DashBoardScreenState extends State<DashBoardScreen> {
   var nameController = TextEditingController();
+
+  RangeValues values = RangeValues(0, 100);
+
   @override
   Widget build(BuildContext context) {
+    RangeLabels labels = RangeLabels(values.start.toString(), values.end.toString());
 
     return Scaffold(
 
         appBar: AppBar(
-          title: Text('DashBoard'),
+          title: Center(child: Text('Range Slider')),
         ),
       body: Center(child: Container(
         width: 300,
@@ -62,13 +71,33 @@ class DashBoardScreen extends StatelessWidget{
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => IntroPage(nameController.text.toString())));
             }, child: Text('My Profile')),
+
+            //here using RangeSlider
+
+            RangeSlider(values: values,
+              labels: labels,
+              divisions: 20,
+              activeColor: Colors.deepOrange,
+              inactiveColor: Colors.deepOrange.shade100,
+              min: 0,
+              max: 100,
+              onChanged: (newValue){
+
+                values = newValue;
+
+                setState((){
+                  print("${newValue.start},${newValue.end}");
+                });
+
+               },
+            ),
+
           ],
         ),
       )
       ),
     );
     }
-
 }
 
 
