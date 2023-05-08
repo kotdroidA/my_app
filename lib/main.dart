@@ -37,6 +37,7 @@ class MyApp extends StatelessWidget {
 }
 
 class DashBoardScreen extends StatelessWidget{
+  var nameController = TextEditingController();
   @override
   Widget build(BuildContext context) {
 
@@ -45,18 +46,24 @@ class DashBoardScreen extends StatelessWidget{
         appBar: AppBar(
           title: Text('DashBoard'),
         ),
-      body: Center(child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text('DashBoard Screen',style: TextStyle(fontSize: 21,color: Colors.deepOrange),),
+      body: Center(child: Container(
+        width: 300,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text('DashBoard Screen',style: TextStyle(fontSize: 21,color: Colors.deepOrange),),
 
-          SizedBox(height: 11,),
+            SizedBox(height: 11,),
+            TextField(
+              controller: nameController,
+            ),
 
-          ElevatedButton(onPressed: (){
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => IntroPage()));
-          }, child: Text('My Profile')),
-        ],
+            ElevatedButton(onPressed: (){
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => IntroPage(nameController.text.toString())));
+            }, child: Text('My Profile')),
+          ],
+        ),
       )
       ),
     );
